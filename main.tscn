@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs4xdyx3mglt2"]
+
+[ext_resource type="Environment" uid="uid://dh3xmtbp0a523" path="res://Default_env.tres" id="1_j5tpf"]
+[ext_resource type="PackedScene" uid="uid://ci52bv1m15cbs" path="res://cars/YellowCar.tscn" id="1_mdet3"]
+[ext_resource type="PackedScene" uid="uid://dyh0h5hfj0jcx" path="res://blender/Map.blend" id="2_13atp"]
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.739838, 0.118632, -0.662244, 0.572952, -0.627057, 0.527755, -0.352656, -0.769887, -0.531891, 0, 43.5687, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 200.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_j5tpf")
+
+[node name="car" parent="." instance=ExtResource("1_mdet3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08918, 1.86711, -6.30866)
+
+[node name="Map" parent="." instance=ExtResource("2_13atp")]
